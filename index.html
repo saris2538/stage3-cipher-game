@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="half">
+            <div class="quarter">
+                <div class="topic">Puzzle</div>
+                <div class="content" id="puzzle-paragraph">
+                    <p>Q egflztssqzogf ol qf qktq gf zit etstlzoqs lhitkt of vioei q ukgxh gy colowst lzqkl ygkdl q htketoctr hqzztkf gk gxzsoft , znhoeqssn kthktltfzofu qf qfodqs, dnzigsguoeqs lxwptez, gk ofqfodqzt gwptez.[1] </p>
+                    <p>Zit gkouofl gy zit tqksotlz egflztssqzogfl soatsn ug wqea zg hktiolzgkn. Htghst xltr zitd zg ktsqzt lzgkotl gy zitok wtsotyl, tbhtkotfetl, ektqzogf, gk dnzigsgun. Royytktfz exszxktl qfr egxfzkotl ofctfztr zitok gvf egflztssqzogfl, lgdt gy vioei sqlztr ofzg zit tqksn 20zi etfzxkn wtygkt zgrqn'l egflztssqzogfl vtkt ofztkfqzogfqssn ktegufomtr. Zit ktegufozogf gy egflztssqzogfl iql eiqfutr loufoyoeqfzsn gctk zodt. Dqfn eiqfutr of lomt gk liqht. Lgdt wteqdt hghxsqk, gfsn zg rkgh ofzg gwlexkozn. Lgdt vtkt sodoztr zg q lofust exszxkt gk fqzogf. Fqdofu egflztssqzogfl qslg itshtr qlzkgfgdtkl qfr fqcouqzgkl ortfzoyn lzqkl dgkt tqlosn.[2]</p>
+                </div>
+            </div>
+            <div class="quarter">
+                <div class="topic">Answer</div>
+                <div class="content" id="answer-paragraph">
+                    <p>*</p>
+                </div>
+            </div>
+            <div class="decode">
+                <input type="text" name="code" id="code" placeholder="Enter code here">
+                <input type="text" name="decode" id="decode" readonly>
+            </div>
+        </div>
+        <div class="right-half">
+            <div id="warning" class="warning hidden">
+                ⚠️ There are ≥ ? wrong pairs! Please check your mapping. ⚠️
+            </div>
+            <div class="pairs-grid">
+                <div class="pairs">a <input type="text" maxlength=1 name="from-a" id="from-a" placeholder="*">  </div>
+                <div class="pairs">b <input type="text" maxlength=1 name="from-b" id="from-b" placeholder="*">  </div>
+                <div class="pairs">c <input type="text" maxlength=1 name="from-c" id="from-c" placeholder="*">  </div>
+                <div class="pairs">d <input type="text" maxlength=1 name="from-d" id="from-d" placeholder="*">  </div>
+                <div class="pairs">e <input type="text" maxlength=1 name="from-e" id="from-e" placeholder="*">  </div>
+                <div class="pairs">f <input type="text" maxlength=1 name="from-f" id="from-f" placeholder="*">  </div>
+                <div class="pairs">g <input type="text" maxlength=1 name="from-g" id="from-g" placeholder="*">  </div>
+                <div class="pairs">h <input type="text" maxlength=1 name="from-h" id="from-h" placeholder="*">  </div>
+                <div class="pairs">i <input type="text" maxlength=1 name="from-i" id="from-i" placeholder="*">  </div>
+                <div class="pairs">j <input type="text" maxlength=1 name="from-j" id="from-j" placeholder="*">  </div>
+                <div class="pairs">k <input type="text" maxlength=1 name="from-k" id="from-k" placeholder="*">  </div>
+                <div class="pairs">l <input type="text" maxlength=1 name="from-l" id="from-l" placeholder="*">  </div>
+                <div class="pairs">m <input type="text" maxlength=1 name="from-m" id="from-m" placeholder="*">  </div>
+                <div class="pairs">n <input type="text" maxlength=1 name="from-n" id="from-n" placeholder="*">  </div>
+                <div class="pairs">o <input type="text" maxlength=1 name="from-o" id="from-o" placeholder="*">  </div>
+                <div class="pairs">p <input type="text" maxlength=1 name="from-p" id="from-p" placeholder="*">  </div>
+                <div class="pairs">q <input type="text" maxlength=1 name="from-q" id="from-q" placeholder="*">  </div>
+                <div class="pairs">r <input type="text" maxlength=1 name="from-r" id="from-r" placeholder="*">  </div>
+                <div class="pairs">s <input type="text" maxlength=1 name="from-s" id="from-s" placeholder="*">  </div>
+                <div class="pairs">t <input type="text" maxlength=1 name="from-t" id="from-t" placeholder="*">  </div>
+                <div class="pairs">u <input type="text" maxlength=1 name="from-u" id="from-u" placeholder="*">  </div>
+                <div class="pairs">v <input type="text" maxlength=1 name="from-v" id="from-v" placeholder="*">  </div>
+                <div class="pairs">w <input type="text" maxlength=1 name="from-w" id="from-w" placeholder="*">  </div>
+                <div class="pairs">x <input type="text" maxlength=1 name="from-x" id="from-x" placeholder="*">  </div>
+                <div class="pairs">y <input type="text" maxlength=1 name="from-y" id="from-y" placeholder="*">  </div>
+                <div class="pairs">z <input type="text" maxlength=1 name="from-z" id="from-z" placeholder="*">  </div>
+            </div>
+            <div class="buttons">
+                <button id="reveal-map-button">Reveal map</button>
+                <button id="reveal-code-button">Reveal code</button>
+                <button id="reset-button">Reset</button>
+            </div>
+           
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
