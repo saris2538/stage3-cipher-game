@@ -1,7 +1,7 @@
 const puzzle_text = "Q egflztssqzogf ol qf qktq gf zit etstlzoqs lhitkt of vioei q ukgxh gy colowst lzqkl ygkdl q htketoctr hqzztkf gk gxzsoft , znhoeqssn kthktltfzofu qf qfodqs, dnzigsguoeqs lxwptez, gk ofqfodqzt gwptez.[1]\n\nZit gkouofl gy zit tqksotlz egflztssqzogfl soatsn ug wqea zg hktiolzgkn. Htghst xltr zitd zg ktsqzt lzgkotl gy zitok wtsotyl, tbhtkotfetl, ektqzogf, gk dnzigsgun. Royytktfz exszxktl qfr egxfzkotl ofctfztr zitok gvf egflztssqzogfl, lgdt gy vioei sqlztr ofzg zit tqksn 20zi etfzxkn wtygkt zgrqn'l egflztssqzogfl vtkt ofztkfqzogfqssn ktegufomtr. Zit ktegufozogf gy egflztssqzogfl iql eiqfutr loufoyoeqfzsn gctk zodt. Dqfn eiqfutr of lomt gk liqht. Lgdt wteqdt hghxsqk, gfsn zg rkgh ofzg gwlexkozn. Lgdt vtkt sodoztr zg q lofust exszxkt gk fqzogf. Fqdofu egflztssqzogfl qslg itshtr qlzkgfgdtkl qfr fqcouqzgkl ortfzoyn lzqkl dgkt tqlosn.[2]"
 const keymap = 'kxvmcnoph*rszyijadlegwbuft'; // substitution key
 const keycode = 'soct q wtqxzoyxs soyt'
-const MAX_WRONG = 7;
+const MAX_WRONG = 5;
 
 const code = document.getElementById("code");
 const decode = document.getElementById("decode");

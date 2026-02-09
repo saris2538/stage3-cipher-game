@@ -16,7 +16,7 @@ body {
 }
 
 .quarter {
-    padding: 20px ;
+    padding: 10px ;
 }
 
 .decode {
@@ -51,8 +51,9 @@ body {
     font-family: monospace;
 }
 
+
 .pairs-grid {
-    padding: 20px;
+    padding: 12px 20px 4px;  /* top | left-right | bottom */
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(13, auto);
@@ -74,6 +75,7 @@ body {
     border-radius: 5px;
     font-size: 15px;
     padding: 5px 12px;
+    display: none;
 }
 
  .buttons #reset-button {
@@ -97,8 +99,63 @@ body {
   background: #fff7db;
   color: #7a4b00;
   border-radius: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   font-size: 14px;
   text-align: center;
 }
 .hidden{ display:none; }
+
+.howto .topic{
+  width: 45%; /* ให้หัวข้อไม่สั้นเกิน */
+}
+
+.howto-content{
+  word-spacing: normal;   /* สำคัญ: ไม่ให้ spacing แบบ puzzle */
+  font-family: Arial, sans-serif;
+  line-height: 1.0em;
+  margin-bottom: 24px;
+}
+
+.howto-content ol{
+  margin: 0;
+  padding-left: 20px;
+}
+
+.howto-content ul{
+  margin: 6px 0 0 0;
+  padding-left: 18px;
+}
+
+.howto-content li{
+  margin: 6px 0;
+}
+
+.howto-content .tip{
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(29, 31, 109, 0.08);
+}
+
+.topic-howto {
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    width: 40%;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.decode-right{
+  margin: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.decode-right input{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}

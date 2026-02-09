@@ -9,27 +9,42 @@
 <body>
     <div class="container">
         <div class="half">
+            <div class="howto">
+                <div class="topic topic-howto">How to Play</div>
+                <div class="content howto-content">
+                    <ol>
+                    <li><strong>Goal:</strong> decode the secret phrase from the previous stage — but first, crack the substitution map.</li>
+                    <li>Read the <strong>Encoded Paragraph</strong> section.</li>
+                    <li>Fill in the mapping table on the right (<strong>a → ?</strong>, <strong>b → ?</strong>, …).
+                        <ul>
+                        <li>Leave a box blank if you’re unsure.</li>
+                        <li>Each cipher letter should map to <strong>exactly one</strong> plaintext letter.</li>
+                        </ul>
+                    </li>
+                    <li>The <strong>Decoded Paragraph</strong> section updates live as you type. When it becomes readable, your mapping is correct.</li>
+                    <li>Paste the secret phrase into <strong>Enter code here</strong> to decode it using your current mapping.</li>
+                    </ol>
+                </div>
+            </div>
+
             <div class="quarter">
-                <div class="topic">Puzzle</div>
+                <div class="topic">Encoded Paragraph</div>
                 <div class="content" id="puzzle-paragraph">
                     <p>Q egflztssqzogf ol qf qktq gf zit etstlzoqs lhitkt of vioei q ukgxh gy colowst lzqkl ygkdl q htketoctr hqzztkf gk gxzsoft , znhoeqssn kthktltfzofu qf qfodqs, dnzigsguoeqs lxwptez, gk ofqfodqzt gwptez.[1] </p>
                     <p>Zit gkouofl gy zit tqksotlz egflztssqzogfl soatsn ug wqea zg hktiolzgkn. Htghst xltr zitd zg ktsqzt lzgkotl gy zitok wtsotyl, tbhtkotfetl, ektqzogf, gk dnzigsgun. Royytktfz exszxktl qfr egxfzkotl ofctfztr zitok gvf egflztssqzogfl, lgdt gy vioei sqlztr ofzg zit tqksn 20zi etfzxkn wtygkt zgrqn'l egflztssqzogfl vtkt ofztkfqzogfqssn ktegufomtr. Zit ktegufozogf gy egflztssqzogfl iql eiqfutr loufoyoeqfzsn gctk zodt. Dqfn eiqfutr of lomt gk liqht. Lgdt wteqdt hghxsqk, gfsn zg rkgh ofzg gwlexkozn. Lgdt vtkt sodoztr zg q lofust exszxkt gk fqzogf. Fqdofu egflztssqzogfl qslg itshtr qlzkgfgdtkl qfr fqcouqzgkl ortfzoyn lzqkl dgkt tqlosn.[2]</p>
                 </div>
             </div>
             <div class="quarter">
-                <div class="topic">Answer</div>
+                <div class="topic">Decoded Paragraph</div>
                 <div class="content" id="answer-paragraph">
                     <p>*</p>
                 </div>
             </div>
-            <div class="decode">
-                <input type="text" name="code" id="code" placeholder="Enter code here">
-                <input type="text" name="decode" id="decode" readonly>
-            </div>
+            
         </div>
         <div class="right-half">
             <div id="warning" class="warning hidden">
-                ⚠️ There are ≥ ? wrong pairs! Please check your mapping. ⚠️
+                ⚠️ There are ? wrong pairs! Please check your mapping. ⚠️
             </div>
             <div class="pairs-grid">
                 <div class="pairs">a <input type="text" maxlength=1 name="from-a" id="from-a" placeholder="*">  </div>
@@ -64,7 +79,10 @@
                 <button id="reveal-code-button">Reveal code</button>
                 <button id="reset-button">Reset</button>
             </div>
-           
+           <div class="decode decode-right">
+                <input type="text" name="code" id="code" placeholder="Enter code here">
+                <input type="text" name="decode" id="decode" readonly>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
