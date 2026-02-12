@@ -16,7 +16,7 @@ https://saris2538.github.io/stage3-cipher-game/
    - Leave a box blank if you’re unsure.
    - Each cipher letter should map to **exactly one** plaintext letter.
 5. The **Decoded Paragraph** section updates live as you type. When it becomes readable, your mapping is correct.
-6. Paste the secret phrase in **Enter secret phrase here** to decode it using your current mapping.
+6. Enter the secret phrase in **Enter secret phrase here** to decode it using your current mapping.
 7. Optional buttons:
    - **Reset**: clears everything.
 
