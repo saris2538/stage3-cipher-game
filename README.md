@@ -4,7 +4,7 @@ A small web puzzle where you solve a **one-to-one substitution cipher** by filli
 As you type, the decoded text updates instantly. Once you crack the mapping, you can decode the secret code at the bottom.
 
 🔗 **Live Demo:**  
-[https://saris2538.github.io/substitution-cipher-game/](https://saris2538.github.io/stage3-cipher-game/)
+https://saris2538.github.io/stage3-cipher-game/
 
 ---
 
