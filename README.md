@@ -10,15 +10,14 @@ As you type, the decoded text updates instantly. Once you crack the mapping, you
 
 ## Demo / How to Play
 
-1. Look at the encoded **Puzzle** paragraph.
-2. Fill the mapping table on the right (`a → ?`, `b → ?`, …).
-   - Leave a box empty if you’re not sure yet.
+1. **Goal:** decode the secret phrase from the previous stage — but first, crack the substitution map.
+2. Read the **Encoded Paragraph** section.
+4. Fill in the mapping table on the right (`a → ?`, `b → ?`, …).
+   - Leave a box blank if you’re unsure.
    - Each cipher letter should map to **exactly one** plaintext letter.
-3. The **Answer** section updates live as you type.
-4. Enter a secret phrase in **Enter code here** to decode it using your current mapping. (In the full game flow, this secret phrase comes from a previous connected puzzle. For this standalone version, you can simply click **Reveal code**.)
-5. Optional buttons:
-   - **Reveal map**: fills the full correct mapping.
-   - **Reveal code**: auto-fills the secret code phrase.
+5. The **Decoded Paragraph** section updates live as you type. When it becomes readable, your mapping is correct.
+6. Paste the secret phrase in **Enter secret phrase here** to decode it using your current mapping.
+7. Optional buttons:
    - **Reset**: clears everything.
 
 ## Features
