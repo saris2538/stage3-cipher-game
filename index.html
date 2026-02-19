@@ -10,33 +10,20 @@
     <div class="container">
         <div class="half">
             <div class="howto">
-                <div class="howto-header">
-                    <div class="topic topic-howto">How to Play</div>
-                    <div class="topic topic-hints">Starting Hints</div>
-                </div>
-                <div class="howto-body">
-                    <div class="content howto-content">
-                        <ol>
-                        <li><strong>Goal:</strong> decode the secret phrase from the previous stage — but first, crack the substitution map.</li>
-                        <li>Read the <strong>Encoded Paragraph</strong> section.</li>
-                        <li>Fill in the mapping table on the right (<strong>a → ?</strong>, <strong>b → ?</strong>, …).
-                            <ul>
-                            <li>Leave a box blank if you’re unsure.</li>
-                            <li>Each cipher letter should map to <strong>exactly one</strong> plaintext letter.</li>
-                            </ul>
-                        </li>
-                        <li>The <strong>Decoded Paragraph</strong> section updates live as you type. When it becomes readable, your mapping is correct.</li>
-                        <li>Enter the secret phrase into <strong>Enter secret phrase here</strong> to decode it using your current mapping.</li>
-                        </ol>
-                    </div>
-                    <div class="content hints-content">
+                <div class="topic topic-howto">How to Play</div>
+                <div class="content howto-content">
+                    <ol>
+                    <li><strong>Goal:</strong> decode the secret phrase from the previous stage — but first, crack the substitution map.</li>
+                    <li>Read the <strong>Encoded Paragraph</strong> section.</li>
+                    <li>Fill in the mapping table on the right (<strong>a → ?</strong>, <strong>b → ?</strong>, …).
                         <ul>
-                            <li>Look for one-letter words. If one appears often, it’s likely “a.”</li>
-                            <li>Find a frequent 3-letter word and test if it could be “the.” Check whether it appears in many places.</li>
-                            <li>Apostrophes usually indicate contractions (don’t, it’s, we’re, can’t). Even partial guesses can help lock in letters.</li>
-                            <li>Once you solve a few letters, many words become half-readable, and the rest gets much easier.</li>
+                        <li>Leave a box blank if you’re unsure.</li>
+                        <li>Each cipher letter should map to <strong>exactly one</strong> plaintext letter.</li>
                         </ul>
-                    </div>
+                    </li>
+                    <li>The <strong>Decoded Paragraph</strong> section updates live as you type. When it becomes readable, your mapping is correct.</li>
+                    <li>Enter the secret phrase into <strong>Enter secret phrase here</strong> to decode it using your current mapping.</li>
+                    </ol>
                 </div>
             </div>
 
@@ -56,7 +43,17 @@
             
         </div>
         <div class="right-half">
-            <div class="right-spacer" aria-hidden="true"></div>
+            <div class="hints-panel">
+                <div class="topic topic-hints">Starting Hints</div>
+                <div class="content hints-content">
+                    <ul>
+                        <li>Look for one-letter words. If one appears often, it’s likely “a.”</li>
+                        <li>Find a frequent 3-letter word and test if it could be “the.” Check whether it appears in many places.</li>
+                        <li>Apostrophes usually indicate contractions (don’t, it’s, we’re, can’t). Even partial guesses can help lock in letters.</li>
+                        <li>Once you solve a few letters, many words become half-readable, and the rest gets much easier.</li>
+                    </ul>
+                </div>
+            </div>
             <div id="warning" class="warning hidden">
                 ⚠️ There are ? wrong pairs! Please check your mapping. ⚠️
             </div>

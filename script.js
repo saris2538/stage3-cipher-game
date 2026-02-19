@@ -9,9 +9,6 @@ const puzzle_paragraph = document.getElementById("puzzle-paragraph");
 const answer_paragraph = document.getElementById("answer-paragraph");
 puzzle_paragraph.innerText = puzzle_text;
 
-const howtoPanel = document.querySelector(".howto");
-const rightSpacer = document.querySelector(".right-spacer");
-
 const warningEl = document.getElementById("warning");
 
 
@@ -62,14 +59,6 @@ code.addEventListener("input", renderAll);
 
 // Initial render
 renderAll();
-
-function syncRightSpacerHeight() {
-  if (!howtoPanel || !rightSpacer) return;
-  rightSpacer.style.height = `${howtoPanel.offsetHeight}px`;
-}
-
-syncRightSpacerHeight();
-window.addEventListener("resize", syncRightSpacerHeight);
 
 const revealMapButton = document.getElementById("reveal-map-button");
 const revealCodeButton = document.getElementById("reveal-code-button");

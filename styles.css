@@ -105,38 +105,15 @@ body {
 }
 .hidden{ display:none; }
 
-.right-spacer{
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.howto-header{
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 16px;
-  align-items: stretch;
-}
-
-.howto-header .topic{
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-  padding: 8px 10px;
-  margin-bottom: 0;
-}
-
-.howto-body{
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 16px;
-  align-items: start;
+.hints-panel{
+  margin-bottom: 12px;
 }
 
 .howto-content{
   word-spacing: normal;   /* สำคัญ: ไม่ให้ spacing แบบ puzzle */
   font-family: Arial, sans-serif;
   line-height: 1.2em;
-  margin-bottom: 0;
+  margin-bottom: 12px;
 }
 
 .howto-content ol{
@@ -191,12 +168,8 @@ body {
 }
 
 @media (max-width: 900px) {
-  .howto-header{
-    grid-template-columns: 1fr;
-  }
-
-  .howto-body{
-    grid-template-columns: 1fr;
+  .hints-panel{
+    margin-bottom: 16px;
   }
 }
 
