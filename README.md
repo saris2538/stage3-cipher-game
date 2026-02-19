@@ -5,7 +5,7 @@ As you type, the decoded text updates instantly. Once you crack the mapping, you
 
 🔗 **Live Demo:**  
 https://saris2538.github.io/stage3-cipher-game/
-
+ 
 ---
 
 ## Demo / How to Play
