@@ -17,8 +17,8 @@
                     <li>Read the <strong>Encoded Paragraph</strong> section.</li>
                     <li>Fill in the mapping table on the right (<strong>a → ?</strong>, <strong>b → ?</strong>, …).
                         <ul>
-                        <li>Leave a box blank if you’re unsure.</li>
-                        <li>Each cipher letter should map to <strong>exactly one</strong> plaintext letter.</li>
+                        <li>This is a <strong>one-to-one substitution across the full alphabet (a–z).</strong></li>
+                        <li>Each cipher letter maps to <strong>exactly one</strong> plaintext letter, and <strong>no two different cipher letters map to the same plaintext letter.</strong>.</li>
                         </ul>
                     </li>
                     <li>The <strong>Decoded Paragraph</strong> section updates live as you type. When it becomes readable, your mapping is correct.</li>
@@ -30,8 +30,7 @@
             <div class="quarter">
                 <div class="topic">Encoded Paragraph</div>
                 <div class="content" id="puzzle-paragraph">
-                    <p>Q egflztssqzogf ol qf qktq gf zit etstlzoqs lhitkt of vioei q ukgxh gy colowst lzqkl ygkdl q htketoctr hqzztkf gk gxzsoft , znhoeqssn kthktltfzofu qf qfodqs, dnzigsguoeqs lxwptez, gk ofqfodqzt gwptez.[1] </p>
-                    <p>Zit gkouofl gy zit tqksotlz egflztssqzogfl soatsn ug wqea zg hktiolzgkn. Htghst xltr zitd zg ktsqzt lzgkotl gy zitok wtsotyl, tbhtkotfetl, ektqzogf, gk dnzigsgun. Royytktfz exszxktl qfr egxfzkotl ofctfztr zitok gvf egflztssqzogfl, lgdt gy vioei sqlztr ofzg zit tqksn 20zi etfzxkn wtygkt zgrqn'l egflztssqzogfl vtkt ofztkfqzogfqssn ktegufomtr. Zit ktegufozogf gy egflztssqzogfl iql eiqfutr loufoyoeqfzsn gctk zodt. Dqfn eiqfutr of lomt gk liqht. Lgdt wteqdt hghxsqk, gfsn zg rkgh ofzg gwlexkozn. Lgdt vtkt sodoztr zg q lofust exszxkt gk fqzogf. Fqdofu egflztssqzogfl qslg itshtr qlzkgfgdtkl qfr fqcouqzgkl ortfzoyn lzqkl dgkt tqlosn.[2]</p>
+                    <p>*</p>
                 </div>
             </div>
             <div class="quarter">
@@ -39,6 +38,11 @@
                 <div class="content" id="answer-paragraph">
                     <p>*</p>
                 </div>
+            </div>
+            
+            <div class="decode decode-right">
+                <input type="text" name="code" id="code" placeholder="Enter secret phrase here">
+                <input type="text" name="decode" id="decode" readonly>
             </div>
             
         </div>
@@ -50,6 +54,7 @@
                         <li>Look for one-letter words. If one appears often, it’s likely “a.”</li>
                         <li>Find a frequent 3-letter word and test if it could be “the.” Check whether it appears in many places.</li>
                         <li>Apostrophes usually indicate contractions (don’t, it’s, we’re, can’t). Even partial guesses can help lock in letters.</li>
+                        <li>If you’re unsure but can narrow it down to <strong>2–3 possible letters</strong> (e.g., <strong>n*w</strong> could be <strong>o</strong> or <strong>e</strong>), try one option and see how it affects the paragraph. If the decoded text stops making sense, revisit and adjust your guess.</li>
                         <li>Once you solve a few letters, many words become half-readable, and the rest gets much easier.</li>
                     </ul>
                 </div>
@@ -89,10 +94,6 @@
                 <button id="reveal-map-button">Reveal map</button>
                 <button id="reveal-code-button">Reveal code</button>
                 <button id="reset-button">Reset</button>
-            </div>
-           <div class="decode decode-right">
-                <input type="text" name="code" id="code" placeholder="Enter secret phrase here">
-                <input type="text" name="decode" id="decode" readonly>
             </div>
         </div>
     </div>
