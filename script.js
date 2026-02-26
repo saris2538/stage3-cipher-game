@@ -1,3 +1,105 @@
+// ================== AUTOSAVE CODE, CAN BE REUSED IN OTHER PROJECTS ==================
+const STORAGE_KEY = "cipher_autosave_v1";
+
+function getAutosaveElements() {
+  return Array.from(document.querySelectorAll("[data-autosave='1']"));
+}
+
+function saveState() {
+  const state = {};
+  for (const el of getAutosaveElements()) {
+    const key = el.id || el.name;
+    if (!key) continue;
+
+    if (el.type === "checkbox") state[key] = el.checked;
+    else state[key] = el.value;
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function applyState(state) {
+  for (const el of getAutosaveElements()) {
+    const key = el.id || el.name;
+    if (!key || !(key in state)) continue;
+
+    if (el.type === "checkbox") el.checked = !!state[key];
+    else el.value = state[key];
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (raw) {
+    try { applyState(JSON.parse(raw)); } catch {}
+  }
+
+  for (const el of getAutosaveElements()) {
+    el.addEventListener("input", saveState);
+    el.addEventListener("change", saveState);
+  }
+});
+// ================== END OF AUTOSAVE CODE ==================
+
+// ================== Modal elements and functions for restore autosave state ==================
+let restoreBackdrop, confirmRestoreBtn, discardRestoreBtn;
+
+function openRestoreModal(){
+  restoreBackdrop.classList.add("show");
+  restoreBackdrop.setAttribute("aria-hidden","false");
+}
+function closeRestoreModal(){
+  restoreBackdrop.classList.remove("show");
+  restoreBackdrop.setAttribute("aria-hidden","true");
+}
+
+function loadSavedState(){
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return null;
+  try { return JSON.parse(raw); } catch { return null; }
+}
+
+function clearSavedState(){
+  localStorage.removeItem(STORAGE_KEY);
+}
+
+// ใช้เช็คว่า state มีค่าอะไรจริง ๆ ไม่ใช่ object ว่าง
+function hasAnyValue(state){
+  if (!state || typeof state !== "object") return false;
+  return Object.values(state).some(v => v !== "" && v !== null && v !== false);
+}
+
+/* 
+  IMPORTANT:
+  คุณต้องมีฟังก์ชันนี้ในโปรเจคอยู่แล้ว:
+  function applyState(state) { ... } 
+  เพื่อเอา state ไปใส่กลับ inputs
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Query modal elements here so the DOM is fully parsed
+  restoreBackdrop  = document.getElementById("restoreBackdrop");
+  confirmRestoreBtn = document.getElementById("confirmRestoreBtn");
+  discardRestoreBtn = document.getElementById("discardRestoreBtn");
+
+  const saved = loadSavedState();
+
+  if (saved && hasAnyValue(saved)) {
+    openRestoreModal();
+
+    confirmRestoreBtn.onclick = () => {
+      applyState(saved);      // << restore inputs
+      closeRestoreModal();
+      renderAll();
+    };
+
+    discardRestoreBtn.onclick = () => {
+      clearSavedState();      // << delete saved
+      closeRestoreModal();
+    };
+  }
+});
+// ================== END OF Modal and restore autosave state code ==================
+
 const puzzle_text = "Hkgptez ztkdofqztr: zit lxw-stcts hgkzqs ol q yqosxkt. Zit sgeqs yqwkoe ol zgg lzqwst. Zit tftkun gxzhxz tbettrl egfzqofdtfz. Vt iqct vqlztr dgfzil of ziol wqltdtfz. Vt qkt qwqfrgfofu zit dqofztfqfet ltezgk oddtroqztsn. Zit ixw ol fgv egsr. Vt ltta zit ftv ygeqs hgofz vitkt zit ctos ol ziofftk. Rqzq lxuutlzl zit lgxket ol fgz ofrxlzkoqs, wxz ktlortfzoqs. Hqea zit tjxohdtfz. Vt dgct zg zit hkodqkn ktlortfet."
 const keymap = 'kxvmcnophqrszyijadlegwbuft'; // substitution key
 const keycode = 'Gf q ioss, zitkt ol qf gsr Coezgkoqf igxlt, gzitkvolt afgvf ql zit Ektts Igxlt.'

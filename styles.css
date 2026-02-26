@@ -184,3 +184,58 @@ body {
   padding: 10px;
   font-size: 16px;
 }
+
+/* --- Restore Modal --- */
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding: 18px;
+  z-index: 9999;
+}
+.modal-backdrop.show{ display:flex; }
+
+.modal{
+  width: min(520px, 100%);
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(15,23,42,.12);
+  box-shadow: 0 24px 60px rgba(2,6,23,.22);
+  padding: 16px 16px 14px;
+}
+
+.modal h3{ margin: 2px 0 8px; font-size: 18px; }
+.modal p{ margin: 0 0 14px; color: #334155; line-height: 1.4; }
+
+.modal-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+.btn-primary{
+  background:#0f5f7a;
+  color:#fff;
+  border: 1px solid rgba(15,95,122,.35);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor:pointer;
+}
+.btn-secondary{
+  background:#ffffff;
+  color:#0f172a;
+  border: 1px solid rgba(15,23,42,.14);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor:pointer;
+}
+
+.modal-hint{
+  margin-top: 10px;
+  font-size: 12px;
+  color: #64748b;
+}
