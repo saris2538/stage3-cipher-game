@@ -89,8 +89,9 @@ body {
 
 .pairs {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     padding: 10px;
+    gap: 8px;
 }
 
 .warning{
@@ -238,4 +239,46 @@ body {
   margin-top: 10px;
   font-size: 12px;
   color: #64748b;
+}
+
+/* --- Unsure Toggle Button --- */
+.unsure-toggle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #999;
+  background: #fff;
+  color: #999;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.unsure-toggle.active {
+  border-color: #d32f2f;
+  color: #d32f2f;
+  background: #ffebee;
+}
+.unsure-letter {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* --- Decode Output (replaces readonly input) --- */
+.decode-output {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #767676;
+  border-radius: 2px;
+  background: #e9ecef;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  word-break: break-all;
 }

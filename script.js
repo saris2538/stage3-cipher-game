@@ -14,6 +14,12 @@ function saveState() {
     if (el.type === "checkbox") state[key] = el.checked;
     else state[key] = el.value;
   }
+  // Save unsure flags
+  const unsureFlags = [];
+  document.querySelectorAll('.unsure-toggle.active').forEach(btn => {
+    unsureFlags.push(btn.getAttribute('data-letter'));
+  });
+  if (unsureFlags.length > 0) state['__unsure_flags__'] = unsureFlags;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
@@ -24,6 +30,13 @@ function applyState(state) {
 
     if (el.type === "checkbox") el.checked = !!state[key];
     else el.value = state[key];
+  }
+  // Restore unsure flags
+  if (state['__unsure_flags__'] && Array.isArray(state['__unsure_flags__'])) {
+    state['__unsure_flags__'].forEach(letter => {
+      const btn = document.querySelector(`.unsure-toggle[data-letter="${letter}"]`);
+      if (btn) btn.classList.add('active');
+    });
   }
 }
 
@@ -37,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     el.addEventListener("input", saveState);
     el.addEventListener("change", saveState);
   }
+  renderAll();
 });
 // ================== END OF AUTOSAVE CODE ==================
 
@@ -140,10 +154,44 @@ function decodeWithMaps(text, maps) {
   }).join("");
 }
 
+function escapeHTML(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function getUnsureSet() {
+  const s = new Set();
+  document.querySelectorAll('.unsure-toggle.active').forEach(btn => {
+    s.add(btn.getAttribute('data-letter'));
+  });
+  return s;
+}
+
+function decodeWithMapsHTML(text, maps, unsureSet) {
+  return text.split("").map(ch => {
+    if (!/[a-z]/i.test(ch)) return escapeHTML(ch);
+    const lower = ch.toLowerCase();
+    const mapped = maps[lower];
+    const display = ch === lower ? mapped : mapped.toUpperCase();
+    if (unsureSet.has(lower)) {
+      return '<span class="unsure-letter">' + escapeHTML(display) + '</span>';
+    }
+    return escapeHTML(display);
+  }).join("");
+}
+
 function renderAll() {
   const maps = buildMaps();
-  answer_paragraph.innerText = decodeWithMaps(puzzle_paragraph.innerText, maps);
-  decode.value = decodeWithMaps(code.value, maps);
+  const unsureSet = getUnsureSet();
+  answer_paragraph.innerHTML = decodeWithMapsHTML(puzzle_text, maps, unsureSet);
+  decode.innerHTML = decodeWithMapsHTML(code.value, maps, unsureSet);
+
+  // Color mapping inputs based on unsure flags
+  for (let i = 0; i < 26; i++) {
+    const c = String.fromCharCode(97 + i);
+    const input = document.getElementById(`from-${c}`);
+    const toggle = document.querySelector(`.unsure-toggle[data-letter="${c}"]`);
+    input.style.color = (toggle && toggle.classList.contains('active')) ? '#d32f2f' : '';
+  }
 
 // Show warning if wrong mappings exceed MAX_WRONG
   const wrongCount = countWrongAgainstKey(keymap);
@@ -161,6 +209,24 @@ code.addEventListener("input", renderAll);
 
 // Initial render
 renderAll();
+
+// Create unsure toggle buttons for each mapping pair
+document.querySelectorAll('.pairs').forEach(pair => {
+    const input = pair.querySelector('input');
+    if (!input) return;
+    const letter = input.id.replace('from-', '');
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'unsure-toggle';
+    btn.setAttribute('data-letter', letter);
+    btn.textContent = '?';
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        renderAll();
+        saveState();
+    });
+    pair.insertBefore(btn, input);
+});
 
 const revealMapButton = document.getElementById("reveal-map-button");
 const revealCodeButton = document.getElementById("reveal-code-button");
@@ -190,8 +256,13 @@ resetButton.addEventListener("click", () => {
     document.querySelectorAll('input[id^="from-"]').forEach(inp => {
         inp.value = "";
     });
+    // Clear unsure flags
+    document.querySelectorAll('.unsure-toggle.active').forEach(btn => {
+        btn.classList.remove('active');
+    });
     code.value = "";
     renderAll();
+    saveState();
 })
 
 function countWrongAgainstKey(keymap) {

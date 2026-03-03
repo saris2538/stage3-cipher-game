@@ -19,6 +19,7 @@
                         <ul>
                         <li>This is a <strong>one-to-one substitution across the full alphabet (a–z).</strong></li>
                         <li>Each cipher letter maps to <strong>exactly one</strong> plaintext letter, and <strong>no two different cipher letters map to the same plaintext letter.</strong>.</li>
+                        <li>Use the <strong>?</strong> toggle next to any mapping you're unsure about. It flags that letter in <strong style="color:#d32f2f">red</strong> across the decoded paragraph and phrase — so if the output looks wrong, you'll know which guesses to revisit first.</li>
                         </ul>
                     </li>
                     <li>The <strong>Decoded Paragraph</strong> section updates live as you type. When it becomes readable, your mapping is correct.</li>
@@ -42,7 +43,7 @@
             
             <div class="decode decode-right">
                 <input type="text" name="code" id="code" placeholder="Enter secret phrase here">
-                <input type="text" name="decode" id="decode" readonly>
+                <div id="decode" class="decode-output"></div>
             </div>
             
         </div>
