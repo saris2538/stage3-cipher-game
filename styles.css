@@ -177,13 +177,18 @@ body {
 .decode-right{
   margin: 20px;
   display: flex;
+  align-items: center;
   gap: 12px;
 }
 
-.decode-right input{
+.decode-right textarea{
   width: 100%;
   padding: 10px;
   font-size: 16px;
+  resize: none;
+  overflow: hidden;
+  font-family: inherit;
+  min-height: 40px;
 }
 
 /* --- Restore Modal --- */
@@ -280,5 +285,9 @@ body {
   min-height: 40px;
   display: flex;
   align-items: center;
+}
+.decode-inner {
   word-break: break-all;
+  width: 100%;
+  text-align: left;
 }

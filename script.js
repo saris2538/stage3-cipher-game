@@ -183,7 +183,7 @@ function renderAll() {
   const maps = buildMaps();
   const unsureSet = getUnsureSet();
   answer_paragraph.innerHTML = decodeWithMapsHTML(puzzle_text, maps, unsureSet);
-  decode.innerHTML = decodeWithMapsHTML(code.value, maps, unsureSet);
+  decode.innerHTML = '<div class="decode-inner">' + decodeWithMapsHTML(code.value, maps, unsureSet) + '</div>';
 
   // Color mapping inputs based on unsure flags
   for (let i = 0; i < 26; i++) {
@@ -197,6 +197,34 @@ function renderAll() {
   const wrongCount = countWrongAgainstKey(keymap);
   warningEl.classList.toggle("hidden", wrongCount < MAX_WRONG);
   warningEl.innerText = `⚠️ There are ${wrongCount} wrong pairs! Please check your mapping. ⚠️`;
+
+  syncBoxes();
+}
+
+function syncBoxes() {
+  const basePad = 10;
+
+  // Reset to measure natural heights
+  code.style.height = 'auto';
+  code.style.paddingTop = basePad + 'px';
+  code.style.paddingBottom = basePad + 'px';
+  decode.style.height = 'auto';
+
+  const tNatural = code.scrollHeight;
+  const oNatural = decode.scrollHeight;
+  const maxH = Math.max(tNatural, oNatural);
+
+  // Set both to the max height
+  code.style.height = maxH + 'px';
+  decode.style.height = maxH + 'px';
+
+  // Vertically center textarea content via padding
+  const contentH = tNatural - 2 * basePad;
+  const totalPadding = maxH - contentH;
+  if (totalPadding > 2 * basePad) {
+    code.style.paddingTop = (totalPadding / 2) + 'px';
+    code.style.paddingBottom = (totalPadding / 2) + 'px';
+  }
 }
 
 // Listen to all input fields with 'from-' prefix for changes
